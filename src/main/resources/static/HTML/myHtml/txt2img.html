@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>txt2img</title>
+</head>
+<body>
+    你想生成的图片数量:<input id="nums" type="number" value="1"/>
+    <br>
+    你想生成什么图片（输入特征）:
+    <br>
+    <textarea cols="50" rows="5" id="question"></textarea>
+    <br>
+    <button id="send" onclick="send()">发送</button>
+    <hr>
+    生成的图片:
+    <div id="imgs" >
+
+    </div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        function send(){
+            var prompt=$('#question').val(); //$和JQuery等效，简写了
+            var num=$('#nums').val();
+            $.post(
+                "/llm/wanx", //传入网站
+                "pmt="+prompt+"&nums="+num, //传入提示词
+                function(responseData){ //输出到div -> imgs里
+                    for(var i=0;i<responseData.length;i++)
+                        $('#imgs').append('<img height="150px" src="'+responseData[i]+'"/>')
+                }
+            )
+        }
+    </script>
+</body>
+</html>

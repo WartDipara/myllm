@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>helper</title>
+</head>
+<body>
+    你想说什么:
+    <br>
+    <textarea cols="50" rows="5" id="question"></textarea>
+    <br>
+    <button id="send" onclick="send()">发送</button>
+    <hr>
+    回复（由千帆ERNIE-Tiny-8K模型提供）:
+    <div id="answer" >
+
+    </div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        function send(){
+            var prompt=$('#question').val(); //$和JQuery等效，简写了
+            $.post(
+                "/llm/qianfan",
+                "prompt="+prompt,
+                function(responseData){
+                    $('#answer').html(responseData);
+                }
+            )
+        }
+    </script>
+</body>
+</html>
