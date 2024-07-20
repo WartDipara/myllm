@@ -7,6 +7,8 @@ import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import jakarta.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -16,10 +18,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.crypto.SecretKey;
+
 import java.io.File;
 import java.util.Date;
-import java.util.List;
 import java.util.UUID;
 
 @Controller
@@ -31,6 +32,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    private static final Logger log= LoggerFactory.getLogger(UserController.class);
 
 //    @PostMapping("/user/register")
 //    @ResponseBody
@@ -55,8 +57,6 @@ public class UserController {
     @PostMapping("/user/register")
     @ResponseBody
     public Result reg(String nickName, String loginName, String loginPwd, MultipartFile imgFile){
-
-
         try{
             User user=new User();
             user.setNickName(nickName);
@@ -64,6 +64,11 @@ public class UserController {
             user.setLoginPwd(loginPwd);
             user.setScore(50);
             if(!imgFile.isEmpty()){
+                File dir=new File(uploadDir);
+                if(!dir.exists()){
+                    dir.mkdirs();
+                }
+
                 String imgName=loginName+imgFile.getOriginalFilename().substring(imgFile.getOriginalFilename().lastIndexOf("."));
                 imgFile.transferTo(new File(uploadDir+imgName));
 
@@ -84,8 +89,11 @@ public class UserController {
             //需要派发身份凭证，用jwt方法
             String token=jwtCreate(currentUser);
             response.setHeader("Authorization",token);
+            log.debug(token);
+            log.info("登录成功",user.getLoginName()+"->"+user.getNickName());
             return new Result(2000,"登录成功",currentUser);
         }
+        log.error("登陆异常");
         return new Result(4004,"登录失败，请检查输入信息",null);
     }
 

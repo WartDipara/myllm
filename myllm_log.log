@@ -1,0 +1,59 @@
+2024-07-20T16:29:46.610+08:00  INFO 18664 --- [myLLM] [main] com.ela.myLLM.MyLlmApplication           : Starting MyLlmApplication using Java 21.0.1 with PID 18664 (D:\Summer_development_tools\myLLM\target\classes started by dipara in D:\Summer_development_tools\myLLM)
+2024-07-20T16:29:46.612+08:00 DEBUG 18664 --- [myLLM] [main] com.ela.myLLM.MyLlmApplication           : Running with Spring Boot v3.3.1, Spring v6.1.10
+2024-07-20T16:29:46.613+08:00  INFO 18664 --- [myLLM] [main] com.ela.myLLM.MyLlmApplication           : The following 1 profile is active: "dev"
+2024-07-20T16:29:47.511+08:00  INFO 18664 --- [myLLM] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 11011 (http)
+2024-07-20T16:29:47.521+08:00  INFO 18664 --- [myLLM] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-20T16:29:47.521+08:00  INFO 18664 --- [myLLM] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-20T16:29:47.563+08:00  INFO 18664 --- [myLLM] [main] o.a.c.c.C.[Tomcat].[localhost].[/start]  : Initializing Spring embedded WebApplicationContext
+2024-07-20T16:29:47.564+08:00  INFO 18664 --- [myLLM] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 890 ms
+2024-07-20T16:29:48.073+08:00  INFO 18664 --- [myLLM] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 11011 (http) with context path '/start'
+2024-07-20T16:29:48.079+08:00  INFO 18664 --- [myLLM] [main] com.ela.myLLM.MyLlmApplication           : Started MyLlmApplication in 1.989 seconds (process running for 2.554)
+2024-07-20T16:30:14.681+08:00  INFO 18664 --- [myLLM] [http-nio-11011-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/start]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-20T16:30:14.682+08:00  INFO 18664 --- [myLLM] [http-nio-11011-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-20T16:30:14.682+08:00  INFO 18664 --- [myLLM] [http-nio-11011-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-07-20T16:30:14.797+08:00  INFO 18664 --- [myLLM] [http-nio-11011-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-20T16:30:14.925+08:00  INFO 18664 --- [myLLM] [http-nio-11011-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4fb24af4
+2024-07-20T16:30:14.927+08:00  INFO 18664 --- [myLLM] [http-nio-11011-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-20T16:30:14.934+08:00 DEBUG 18664 --- [myLLM] [http-nio-11011-exec-1] c.e.m.m.UserMapper.selectByLoginName     : ==>  Preparing: SELECT user_id as userId, user_nickname as nickName, user_loginname as loginName, user_loginpwd as loginPwd,user_score as score,user_img as img FROM users where user_loginname=?
+2024-07-20T16:30:14.955+08:00 DEBUG 18664 --- [myLLM] [http-nio-11011-exec-1] c.e.m.m.UserMapper.selectByLoginName     : ==> Parameters: kfk(String)
+2024-07-20T16:30:14.976+08:00 DEBUG 18664 --- [myLLM] [http-nio-11011-exec-1] c.e.m.m.UserMapper.selectByLoginName     : <==      Total: 1
+2024-07-20T16:30:15.014+08:00 DEBUG 18664 --- [myLLM] [http-nio-11011-exec-1] com.ela.myLLM.ui.UserController          : eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMmEyZTIyZS04NWM4LTQ3NTItOTU0ZS01ODBiODI0NDRmNmIiLCJpYXQiOjE3MjE0NjQyMTQsImV4cCI6MTcyMTQ2NzgxNCwidXNlcklkIjoxMSwibmlja05hbWUiOiJrZmsiLCJsb2dpbk5hbWUiOiJrZmsiLCJsb2dpblB3ZCI6ImtmayIsInN1YiI6IjExIn0.W5Muh1SVUVfOxU89X8MbogJfFUh7EknR3JlC83vdHXo
+2024-07-20T16:30:15.014+08:00  INFO 18664 --- [myLLM] [http-nio-11011-exec-1] com.ela.myLLM.ui.UserController          : 登录成功
+2024-07-20T16:31:44.041+08:00  INFO 18664 --- [myLLM] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-20T16:31:44.046+08:00  INFO 18664 --- [myLLM] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-20T16:42:55.700+08:00 debug 6208 --- [myLLM] [main] com.ela.myLLM.MyLlmApplication           : Starting MyLlmApplication using Java 21.0.1 with PID 6208 (D:\Summer_development_tools\myLLM\target\classes started by dipara in D:\Summer_development_tools\myLLM)
+2024-07-20T16:42:55.703+08:00 debug 6208 --- [myLLM] [main] com.ela.myLLM.MyLlmApplication           : The following 1 profile is active: "dev"
+2024-07-20T16:42:56.624+08:00 debug 6208 --- [myLLM] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 11011 (http)
+2024-07-20T16:42:56.634+08:00 debug 6208 --- [myLLM] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-20T16:42:56.634+08:00 debug 6208 --- [myLLM] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-20T16:42:56.675+08:00 debug 6208 --- [myLLM] [main] o.a.c.c.C.[Tomcat].[localhost].[/start]  : Initializing Spring embedded WebApplicationContext
+2024-07-20T16:42:56.676+08:00 debug 6208 --- [myLLM] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 920 ms
+2024-07-20T16:42:57.171+08:00 debug 6208 --- [myLLM] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 11011 (http) with context path '/start'
+2024-07-20T16:42:57.178+08:00 debug 6208 --- [myLLM] [main] com.ela.myLLM.MyLlmApplication           : Started MyLlmApplication in 1.925 seconds (process running for 2.443)
+2024-07-20T16:43:05.807+08:00 debug 6208 --- [myLLM] [http-nio-11011-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/start]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-20T16:43:05.808+08:00 debug 6208 --- [myLLM] [http-nio-11011-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-20T16:43:05.808+08:00 debug 6208 --- [myLLM] [http-nio-11011-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-07-20T16:43:05.920+08:00 debug 6208 --- [myLLM] [http-nio-11011-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-20T16:43:06.058+08:00 debug 6208 --- [myLLM] [http-nio-11011-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@41f23b6
+2024-07-20T16:43:06.060+08:00 debug 6208 --- [myLLM] [http-nio-11011-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-20T16:43:06.140+08:00 debug 6208 --- [myLLM] [http-nio-11011-exec-1] com.ela.myLLM.ui.UserController          : 登录成功
+2024-07-20T16:43:37.300+08:00 debug 6208 --- [myLLM] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-20T16:43:37.306+08:00 debug 6208 --- [myLLM] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-20T16:43:40.465+08:00 debug 13696 --- [myLLM] [main] com.ela.myLLM.MyLlmApplication           : Starting MyLlmApplication using Java 21.0.1 with PID 13696 (D:\Summer_development_tools\myLLM\target\classes started by dipara in D:\Summer_development_tools\myLLM)
+2024-07-20T16:43:40.468+08:00 debug 13696 --- [myLLM] [main] com.ela.myLLM.MyLlmApplication           : The following 1 profile is active: "dev"
+2024-07-20T16:43:41.401+08:00 debug 13696 --- [myLLM] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 11011 (http)
+2024-07-20T16:43:41.411+08:00 debug 13696 --- [myLLM] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-20T16:43:41.412+08:00 debug 13696 --- [myLLM] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-20T16:43:41.453+08:00 debug 13696 --- [myLLM] [main] o.a.c.c.C.[Tomcat].[localhost].[/start]  : Initializing Spring embedded WebApplicationContext
+2024-07-20T16:43:41.453+08:00 debug 13696 --- [myLLM] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 939 ms
+2024-07-20T16:43:41.990+08:00 debug 13696 --- [myLLM] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 11011 (http) with context path '/start'
+2024-07-20T16:43:41.996+08:00 debug 13696 --- [myLLM] [main] com.ela.myLLM.MyLlmApplication           : Started MyLlmApplication in 2.373 seconds (process running for 3.275)
+2024-07-20T16:43:59.401+08:00 debug 13696 --- [myLLM] [http-nio-11011-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/start]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-20T16:43:59.401+08:00 debug 13696 --- [myLLM] [http-nio-11011-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-20T16:43:59.402+08:00 debug 13696 --- [myLLM] [http-nio-11011-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-07-20T16:43:59.512+08:00 debug 13696 --- [myLLM] [http-nio-11011-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-20T16:43:59.635+08:00 debug 13696 --- [myLLM] [http-nio-11011-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3e9b7007
+2024-07-20T16:43:59.637+08:00 debug 13696 --- [myLLM] [http-nio-11011-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-20T16:43:59.699+08:00 debug 13696 --- [myLLM] [http-nio-11011-exec-1] com.ela.myLLM.ui.UserController          : 登录成功
+2024-07-20T16:44:12.913+08:00 debug 13696 --- [myLLM] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-20T16:44:12.918+08:00 debug 13696 --- [myLLM] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
