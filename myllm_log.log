@@ -250,3 +250,20 @@ com.mysql.cj.exceptions.UnableToConnectException: Public Key Retrieval is not al
 2024-07-24T21:04:47.964+08:00 debug 24644 --- [myLLM] [http-nio-11011-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/start]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-07-24T21:04:47.964+08:00 debug 24644 --- [myLLM] [http-nio-11011-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2024-07-24T21:04:47.965+08:00 debug 24644 --- [myLLM] [http-nio-11011-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-07-24T21:08:51.178+08:00 debug 16276 --- [myLLM] [main] com.ela.myLLM.MyLlmApplication           : Starting MyLlmApplication using Java 21.0.1 with PID 16276 (D:\Summer_development_tools\myLLM\target\classes started by dipara in D:\Summer_development_tools\myLLM)
+2024-07-24T21:08:51.180+08:00 debug 16276 --- [myLLM] [main] com.ela.myLLM.MyLlmApplication           : The following 1 profile is active: "dev"
+2024-07-24T21:08:52.113+08:00 debug 16276 --- [myLLM] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 11011 (http)
+2024-07-24T21:08:52.124+08:00 debug 16276 --- [myLLM] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-24T21:08:52.124+08:00 debug 16276 --- [myLLM] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-24T21:08:52.176+08:00 debug 16276 --- [myLLM] [main] o.a.c.c.C.[Tomcat].[localhost].[/start]  : Initializing Spring embedded WebApplicationContext
+2024-07-24T21:08:52.176+08:00 debug 16276 --- [myLLM] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 947 ms
+2024-07-24T21:08:52.770+08:00 debug 16276 --- [myLLM] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 11011 (http) with context path '/start'
+2024-07-24T21:08:52.778+08:00 debug 16276 --- [myLLM] [main] com.ela.myLLM.MyLlmApplication           : Started MyLlmApplication in 2.043 seconds (process running for 2.792)
+2024-07-24T21:09:26.421+08:00 debug 16276 --- [myLLM] [http-nio-11011-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/start]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-24T21:09:26.422+08:00 debug 16276 --- [myLLM] [http-nio-11011-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-24T21:09:26.423+08:00 debug 16276 --- [myLLM] [http-nio-11011-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-07-24T21:10:03.603+08:00 debug 16276 --- [myLLM] [http-nio-11011-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-24T21:10:04.276+08:00 debug 16276 --- [myLLM] [http-nio-11011-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@57f3cf01
+2024-07-24T21:10:04.283+08:00 debug 16276 --- [myLLM] [http-nio-11011-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-24T21:18:05.487+08:00 debug 16276 --- [myLLM] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-24T21:18:05.495+08:00 debug 16276 --- [myLLM] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

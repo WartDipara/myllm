@@ -12,7 +12,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             return true;
         }
         response.setContentType("application/json;charset=utf-8");
-        response.getWriter().print("{\"code\":9004,\"msg\":\"凭证过期，请重新登录\",\"data\":null}");
+        response.getWriter().print("{\"code\":9004,\"msg\":\"登录失效\",\"data\":null}");
         return false;
     }
 }
