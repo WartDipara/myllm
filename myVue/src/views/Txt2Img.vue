@@ -28,12 +28,12 @@ export default {
     },
     methods: {
         send:async function(){ //同步机制写法 关键字await，必须包含在 async内使用。await关键字会一直等到axios.post有结果返回才会接着往下走。
-            var res=await axios.post(
+            var resp=await axios.post(
                 "http://localhost:11011/start/llm/wanx",
                 "pmt=" + this.question + "&nums=" + this.nums
             );
-            if(res.data.code==2000)
-                this.urls=res.data.data;
+            if(resp.data.code==2000)
+                this.urls=resp.data.data;
             else{
                 alert(resp.data.msg);
             }

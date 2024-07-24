@@ -1,16 +1,17 @@
 package com.ela.myLLM.ui.interceptor;
 
 import com.ela.myLLM.entity.User;
-import com.ela.myLLM.ui.vo.Result;
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.boot.json.JsonParseException;
+import org.jetbrains.annotations.NotNull;
+
 import org.springframework.web.servlet.HandlerInterceptor;
-import org.springframework.web.servlet.ModelAndView;
+
 
 //必须继承interceptor类重写
 public class JwtInterceptor implements HandlerInterceptor {
@@ -25,12 +26,12 @@ public class JwtInterceptor implements HandlerInterceptor {
 //    }
 
     @Override //在请求处理之前进行调用（Controller方法调用之前） *用的最多是这个
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+    public boolean preHandle(HttpServletRequest request, @NotNull HttpServletResponse response, @NotNull Object handler) throws Exception {
         String jwt=request.getHeader("Authorization");
-        if(jwt==null){
+        if(jwt == null){
             return true;
         }
-        Claims claims=null;
+        Claims claims;
         //需要改写方法，不能照常来写Json数据
 //        try{
 //            //3901是primarykey
@@ -42,8 +43,9 @@ public class JwtInterceptor implements HandlerInterceptor {
 //        }catch(JsonParseException e){
 //            return new Result(9006,"凭证可能被篡改，请警惕",null);
 //        }
+        System.out.println("Received JWT: " + jwt);
         try{
-            claims= Jwts.parser().setSigningKey("3901").parseClaimsJws(jwt).getBody();
+            claims= Jwts.parser().setSigningKey("1818181818").parseClaimsJws(jwt).getBody();
             response.setContentType("application/json;charset=utf-8");
         }catch(ExpiredJwtException e){
             response.getWriter().print("{\"code\":9004,\"msg\":\"凭证过期，请重新登录\",\"data\":null}");

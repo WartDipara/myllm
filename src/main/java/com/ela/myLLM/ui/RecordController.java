@@ -41,7 +41,7 @@ public class RecordController {
             return new Result(9006,"凭证格式错误，请重新登录",null);
         }
     }
-
+    @GetMapping("/record/count")
     public Result queryCountByDate(Integer userId){
         Integer count=recordService.queryCountByDate(userId);
         return new Result(2000,"成功",count);

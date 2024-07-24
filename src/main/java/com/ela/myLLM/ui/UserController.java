@@ -68,7 +68,6 @@ public class UserController {
                 if(!dir.exists()){
                     dir.mkdirs();
                 }
-
                 String imgName=loginName+imgFile.getOriginalFilename().substring(imgFile.getOriginalFilename().lastIndexOf("."));
                 imgFile.transferTo(new File(uploadDir+imgName));
 
@@ -88,6 +87,7 @@ public class UserController {
         if(currentUser!=null){
             //需要派发身份凭证，用jwt方法
             String token=jwtCreate(currentUser);
+            System.out.println("Generated JWT: " + token);//debug
             response.setHeader("Authorization",token);
             log.debug(token);
             log.info("登录成功",user.getLoginName()+"->"+user.getNickName());
@@ -99,18 +99,21 @@ public class UserController {
 
     //用jwt来创建身份凭证
     private String jwtCreate(User currentUser){
+        // 使用更安全的密钥
+        String primaryKey = "1818181818";
+
         JwtBuilder builder = Jwts.builder();
-        builder.setId(UUID.randomUUID().toString());//UUID是全球唯一编码
-        builder.setIssuedAt(new Date());
-        builder.setExpiration(new Date(System.currentTimeMillis()+1000*60*60)); //一小时后失效
-        String primaryKey="3901";
-        builder.signWith(SignatureAlgorithm.HS256,primaryKey);
-        builder.claim("userId",currentUser.getUserId());
-        builder.claim("nickName",currentUser.getNickName());
-        builder.claim("loginName",currentUser.getLoginName());
-        builder.claim("loginPwd",currentUser.getLoginPwd());
-        builder.setSubject(currentUser.getUserId()+""); //核心唯一标识
-        return builder.compact(); //生成凭证
+        builder.setId(UUID.randomUUID().toString()); // UUID是全球唯一编码
+        builder.setIssuedAt(new Date()); // 生成时间
+        builder.setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60*60*365));
+        builder.signWith(SignatureAlgorithm.HS256, primaryKey); // 使用安全的密钥
+        builder.claim("userId", currentUser.getUserId());
+        builder.claim("nickName", currentUser.getNickName());
+        builder.claim("loginName", currentUser.getLoginName());
+        builder.claim("loginPwd", currentUser.getLoginPwd());
+        builder.setSubject(currentUser.getUserId() + ""); // 核心唯一标识
+        return builder.compact(); // 生成凭证
     }
+
 
 }

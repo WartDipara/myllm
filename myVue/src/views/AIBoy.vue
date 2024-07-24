@@ -35,11 +35,10 @@ export default {
             tableData: []
         }
     },
-
     methods: {
         send: function send() {
             var temp = JSON.parse(sessionStorage.getItem("user"));
-            axios.post(//这里的this指向vue主体
+            axios.post(
                     "http://localhost:11011/start/llm/qianwen", "pmt=" + this.question)
                 .then((resp) => {
                     if (resp.data.code == 2000) {
